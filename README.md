@@ -1,1 +1,1 @@
-# odin-rockPaperScissors
+This is the rock, paper, scissors project for TOP. For now, it will be played in the console but will be updated in the future to have visual output.
