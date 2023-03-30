@@ -3,6 +3,10 @@ const choices = ["rock", "paper", "scissors"];
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+const result = document.querySelector(".outputs");
+
+const resultText = document.createElement('h2');
+resultText.classList.add('resultText');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -17,36 +21,45 @@ function playRound(playerSelection, computerSelection) {
   switch(playerSelection.toUpperCase()) {
     case "ROCK":
       if (computerSelection.toUpperCase() === "ROCK") {
-        console.log("It's a tie!");
+        resultText.textContent = "It's a tie!";
+        result.appendChild(resultText);
       } else if (computerSelection.toUpperCase() === "PAPER") {
-        console.log("Computer wins! Paper beats rock!");
+        resultText.textContent = "Computer wins! Paper beats rock!";
+        result.appendChild(resultText);
         computerScore++;
       } else {
-        console.log("You win! Rock beats scissors!");
+        resultText.textContent = "You win! Rock beats scissors!";
+        result.appendChild(resultText);
         playerScore++;
       }
       break;
 
     case "PAPER":
       if (computerSelection.toUpperCase() === "PAPER") {
-        console.log("It's a tie!");
+        resultText.textContent = "It's a tie!";
+        result.appendChild(resultText);
       } else if (computerSelection.toUpperCase() === "ROCK") {
-        console.log("You win! Paper beats rock!");
+        resultText.textContent = "You win! Paper beats rock!";
+        result.appendChild(resultText);
         playerScore++;
       } else {
-        console.log("Computer wins! Scissors beats paper!");
+        resultText.textContent = "Computer wins! Scissors beats paper!";
+        result.appendChild(resultText);
         computerScore++;
       }
       break;
 
     case "SCISSORS":
       if (computerSelection.toUpperCase() === "SCISSORS") {
-        console.log("It's a tie!");
+        resultText.textContent = "It's a tie!";
+        result.appendChild(resultText);
       } else if (computerSelection.toUpperCase() === "ROCK") {
-        console.log("Computer wins! Rock beats scissors!");
+        resultText.textContent = "Computer wins! Rock beats scissors!";
+        result.appendChild(resultText);
         computerScore++;
       } else {
-        console.log("You win! Scissors beats paper!");
+        resultText.textContent = "You win! Scissors beats paper!";
+        result.appendChild(resultText);
         playerScore++;
       }
       break;
