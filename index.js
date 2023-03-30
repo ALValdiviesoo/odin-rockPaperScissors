@@ -25,6 +25,30 @@ function getComputerChoice() {
   return(choices[random]);
 }
 
+function checkScore() {
+  if (computerScore === 5) {
+    alert("COMPUTER STOLE THE GAME!!!");
+    window.location.reload();
+  } else if (playerScore === 5) {
+    alert("YOU WIN THE MATCH!!!");
+    window.location.reload();
+  }
+}
+
+function playerWinsRound() {
+  result.appendChild(resultText);
+  playerScore++;
+  playerScoreText.textContent = playerScore;
+  scores.appendChild(playerScoreText);
+}
+
+function computerWinsRound() {
+  result.appendChild(resultText);
+  computerScore++;
+  computerScoreText.textContent = computerScore;
+  compScore.appendChild(computerScoreText);
+}
+
 function playRound(playerSelection, computerSelection) {
   switch(playerSelection.toUpperCase()) {
     case "ROCK":
@@ -33,17 +57,12 @@ function playRound(playerSelection, computerSelection) {
         result.appendChild(resultText);
       } else if (computerSelection.toUpperCase() === "PAPER") {
         resultText.textContent = "Computer wins! Paper beats rock!";
-        result.appendChild(resultText);
-        computerScore++;
-        computerScoreText.textContent = computerScore;
-        compScore.appendChild(computerScoreText);
+        computerWinsRound();
       } else {
         resultText.textContent = "You win! Rock beats scissors!";
-        result.appendChild(resultText);
-        playerScore++;
-        playerScoreText.textContent = playerScore;
-        scores.appendChild(playerScoreText);
+        playerWinsRound();
       }
+      checkScore();
       break;
 
     case "PAPER":
@@ -52,17 +71,12 @@ function playRound(playerSelection, computerSelection) {
         result.appendChild(resultText);
       } else if (computerSelection.toUpperCase() === "ROCK") {
         resultText.textContent = "You win! Paper beats rock!";
-        result.appendChild(resultText);
-        playerScore++;
-        playerScoreText.textContent = playerScore;
-        scores.appendChild(playerScoreText);
+        playerWinsRound();
       } else {
         resultText.textContent = "Computer wins! Scissors beats paper!";
-        result.appendChild(resultText);
-        computerScore++;
-        computerScoreText.textContent = computerScore;
-        compScore.appendChild(computerScoreText);
+        computerWinsRound();
       }
+      checkScore();
       break;
 
     case "SCISSORS":
@@ -71,17 +85,12 @@ function playRound(playerSelection, computerSelection) {
         result.appendChild(resultText);
       } else if (computerSelection.toUpperCase() === "ROCK") {
         resultText.textContent = "Computer wins! Rock beats scissors!";
-        result.appendChild(resultText);
-        computerScore++;
-        computerScoreText.textContent = computerScore;
-        compScore.appendChild(computerScoreText);
+        computerWinsRound();
       } else {
         resultText.textContent = "You win! Scissors beats paper!";
-        result.appendChild(resultText);
-        playerScore++;
-        playerScoreText.textContent = playerScore;
-        scores.appendChild(playerScoreText);
+        playerWinsRound();
       }
+      checkScore();
       break;
   }
 }
