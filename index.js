@@ -1,5 +1,9 @@
 const choices = ["rock", "paper", "scissors"];
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -49,4 +53,14 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-game();
+rock.onclick = () => {
+  playRound("rock", getComputerChoice());
+}
+
+paper.onclick = () => {
+  playRound("paper", getComputerChoice());
+}
+
+scissors.onclick = () => {
+  playRound("scissors", getComputerChoice());
+}
