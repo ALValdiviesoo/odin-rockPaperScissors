@@ -1,1 +1,1 @@
-This is the rock, paper, scissors project for TOP. For now, it will be played in the console but will be updated in the future to have visual output.
+This is the updated Rock, paper, scissors project with visual output and input. This can still be updated in the future.
